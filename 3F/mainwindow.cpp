@@ -20,3 +20,8 @@ void MainWindow::on_pushButton_clicked()
     p->exec();
 
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+  close();
+}

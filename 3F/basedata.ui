@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Food For Free</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -22,6 +22,9 @@
    </item>
    <item row="2" column="0">
     <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
      <property name="text">
       <string>Готово</string>
      </property>
@@ -29,8 +32,21 @@
    </item>
    <item row="3" column="0">
     <widget class="QPushButton" name="pushButton_2">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
      <property name="text">
       <string>назад</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
+     <property name="text">
+      <string>удалить список</string>
      </property>
     </widget>
    </item>

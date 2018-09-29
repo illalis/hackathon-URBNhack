@@ -8,6 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+
+
 TARGET = 3F
 TEMPLATE = app
 
@@ -30,7 +32,9 @@ SOURCES += \
     basedata.cpp \
     models/service.cpp \
     models/storagemodel.cpp \
-    models/stringtablemodel.cpp
+    models/stringtablemodel.cpp \
+    drop.cpp \
+    send.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,9 +42,13 @@ HEADERS += \
     basedata.h \
     models/service.h \
     models/storagemodel.h \
-    models/stringtablemodel.h
+    models/stringtablemodel.h \
+    drop.h \
+    send.h
 
 FORMS += \
         mainwindow.ui \
     product.ui \
-    basedata.ui
+    basedata.ui \
+    drop.ui \
+    send.ui

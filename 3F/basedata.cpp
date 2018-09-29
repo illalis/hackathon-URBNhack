@@ -1,12 +1,13 @@
 #include "basedata.h"
 #include "ui_basedata.h"
-#include "product.h"
 #include "models/storagemodel.h"
 
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QTableView>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 
 Basedata::Basedata(QWidget *parent) :
     QDialog(parent),
@@ -39,10 +40,12 @@ void Basedata::setPlaceHolderText(const QString &){
 void Basedata::on_pushButton_clicked()
 {
     auto base = new StorageModel("./products.csv");
+
     base->setObjectName("products");
     base->setTitle("new_added_products");
     QStringList headers = {"Наименование","Количество", "Номер"};
     base->setHeaderData(headers);
+
     QString count_1;
     count_1= ui->count->text();
     auto row = base->rowCount()-1;
@@ -57,6 +60,13 @@ void Basedata::on_pushButton_clicked()
         }
     }
     base->saveToDisk();
+   QString ss= QString::number(base->rowCount());
+   QFile file("numebr.txt");
+
+      if(file.open(QFile::WriteOnly | QFile::Text)) {
+          QTextStream stream(&file);
+          stream << ss.toInt() - 1;
+          file.close();
 
     QDialog dialog(this);
     dialog.setObjectName("StorageDemoDialog");
@@ -77,10 +87,17 @@ void Basedata::on_pushButton_clicked()
     dialog.resize(400, 200);
     dialog.exec();
 }
+}
 
 void Basedata::on_pushButton_2_clicked()
 {
- auto p= new Product(this);
- p->exec();
- accept();
+
+ this->close();
 }
+
+void Basedata::on_pushButton_3_clicked()
+{
+    remove("./products.csv");
+    remove("./numebr.txt");
+}
+

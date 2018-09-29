@@ -11,20 +11,36 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Food for Free</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QPushButton" name="pushButton">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
      <property name="text">
-      <string>пополнение базы продуктов</string>
+      <string>Дроп</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QPushButton" name="pushButton_2">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
      <property name="text">
-      <string>дроп</string>
+      <string>Пополнение базы продуктов</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(255, 170, 255)</string>
+     </property>
+     <property name="text">
+      <string>Назад</string>
      </property>
     </widget>
    </item>
