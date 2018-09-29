@@ -14,9 +14,12 @@ class Send : public QDialog
 public:
     explicit Send(QWidget *parent = 0);
     ~Send();
-    //int exec(void);
+    int exec(void);
 
 
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::Send *ui;

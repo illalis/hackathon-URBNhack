@@ -39,9 +39,6 @@ void Drop::setPlaceHolderText(const QString &){
 void Drop::on_pushButton_clicked()
 {
 
-    auto sn = new Send(this);
-    sn->exec();
-
     QFile file("output.txt");
     QString ss;
 
@@ -50,7 +47,10 @@ void Drop::on_pushButton_clicked()
            stream << ui->droplace->text();
            file.close();
 
+    auto sn = new Send(this);
+    sn->exec();
 
+accept();
 
 
 }
