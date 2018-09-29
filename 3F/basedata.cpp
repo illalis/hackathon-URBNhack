@@ -1,5 +1,6 @@
 #include "basedata.h"
 #include "ui_basedata.h"
+#include "product.h"
 #include "models/storagemodel.h"
 
 #include <QDialog>
@@ -74,6 +75,12 @@ void Basedata::on_pushButton_clicked()
     layout->addWidget(buttons);
     dialog.setLayout(layout);
     dialog.resize(400, 200);
-//ui->label->setText("Книга успешно добавлена."+books->data(row,6));
     dialog.exec();
+}
+
+void Basedata::on_pushButton_2_clicked()
+{
+ auto p= new Product(this);
+ p->exec();
+ accept();
 }
