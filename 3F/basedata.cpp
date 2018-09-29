@@ -1,5 +1,6 @@
 #include "basedata.h"
 #include "ui_basedata.h"
+#include "models/storagemodel.h"
 
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -33,3 +34,46 @@ void Basedata::setPlaceHolderText(const QString &){
     ui->count->setPlaceholderText("Количество");
 }
 
+
+void Basedata::on_pushButton_clicked()
+{
+    auto base = new StorageModel("./products.csv");
+    base->setObjectName("products");
+    base->setTitle("new_added_products");
+    QStringList headers = {"Наименование","Количество", "Номер"};
+    base->setHeaderData(headers);
+    QString count_1;
+    count_1= ui->count->text();
+    auto row = base->rowCount()-1;
+    if (count_1.toInt() > 0){
+        for (int i=0; i<count_1.toInt();++i){
+            base->insertRow(base->rowCount());
+            base->setData(row+i,0, ui->naimenovanie->text());
+            base->setData(row+i,1,"1");
+            base->setData(row+i,2, QString::number(base->rowCount()));
+
+
+        }
+    }
+    base->saveToDisk();
+
+    QDialog dialog(this);
+    dialog.setObjectName("StorageDemoDialog");
+    dialog.setWindowTitle(tr("продукты"));
+    dialog.setSizeGripEnabled(true);
+
+    auto priceView = new QTableView(&dialog);
+    priceView->setModel(base);
+
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok, &dialog);
+    connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    auto layout = new QVBoxLayout(&dialog);
+    layout->addWidget(priceView);
+    layout->addWidget(buttons);
+    dialog.setLayout(layout);
+    dialog.resize(400, 200);
+//ui->label->setText("Книга успешно добавлена."+books->data(row,6));
+    dialog.exec();
+}

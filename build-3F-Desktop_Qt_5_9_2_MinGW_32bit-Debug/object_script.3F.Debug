@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\product.o
+./debug\basedata.o
+./debug\service.o
+./debug\storagemodel.o
+./debug\stringtablemodel.o
+./debug\moc_mainwindow.o
+./debug\moc_product.o
+./debug\moc_basedata.o
+./debug\moc_storagemodel.o
+./debug\moc_stringtablemodel.o
+);

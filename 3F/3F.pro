@@ -27,12 +27,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     product.cpp \
-    basedata.cpp
+    basedata.cpp \
+    models/service.cpp \
+    models/storagemodel.cpp \
+    models/stringtablemodel.cpp
 
 HEADERS += \
         mainwindow.h \
     product.h \
-    basedata.h
+    basedata.h \
+    models/service.h \
+    models/storagemodel.h \
+    models/stringtablemodel.h
 
 FORMS += \
         mainwindow.ui \

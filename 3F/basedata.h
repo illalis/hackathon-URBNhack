@@ -18,6 +18,8 @@ public:
 private slots:
     void setPlaceHolderText(const QString &);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Basedata *ui;
 };

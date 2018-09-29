@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\product.o
+./release\basedata.o
+./release\service.o
+./release\storagemodel.o
+./release\stringtablemodel.o
+./release\moc_mainwindow.o
+./release\moc_product.o
+./release\moc_basedata.o
+./release\moc_storagemodel.o
+./release\moc_stringtablemodel.o
+);
